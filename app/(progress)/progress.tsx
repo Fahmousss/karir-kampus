@@ -1,10 +1,12 @@
-import { View } from "react-native";
+import { Image, ScrollView, View } from "react-native";
 import React, { useState } from "react";
 import { Container } from "~/components/Container";
 import { Text } from "~/components/ui/text";
 import { EmojiProgress } from "~/components/ui/progress";
 import { Ionicons } from "@expo/vector-icons";
 import { Button } from "~/components/ui/button";
+import { CalendarList } from "~/components/CalendarList";
+import { router } from "expo-router";
 // import { EmojiProgress } from "~/components/ui/emoji-progress";
 
 export default function ProgressScreen() {
@@ -83,7 +85,13 @@ export default function ProgressScreen() {
                 <Ionicons name="checkmark-circle" size={19} />
               </View>
             </Button>
-            <Button className="items-start" variant={"outline"}>
+            <Button
+              className="items-start"
+              onPress={() => {
+                router.push("/detail_bimbingan");
+              }}
+              variant={"outline"}
+            >
               <View className="flex flex-row items-center w-full justify-between">
                 <Text
                   style={{
@@ -107,6 +115,43 @@ export default function ProgressScreen() {
                 </Text>
               </View>
             </Button>
+          </View>
+        </View>
+        <View className="mb-3">
+          <Text
+            className="mb-3 text-2xl"
+            style={{
+              fontFamily: "Outfit_600SemiBold",
+            }}
+          >
+            Inspirasi
+          </Text>
+          <View className="flex-1 items-start p-4 ">
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{
+                paddingVertical: 4,
+                paddingHorizontal: 4,
+              }}
+            >
+              <View className="mx-2">
+                <Image source={require("assets/images/welcome_pict.png")} />
+              </View>
+
+              <View className="mx-2">
+                <Image source={require("assets/images/inspirasi-1.png")} />
+              </View>
+              <View className="mx-2">
+                <Image source={require("assets/images/inspirasi-2.png")} />
+              </View>
+              <View className="mx-2">
+                <Image source={require("assets/images/inspirasi-3.png")} />
+              </View>
+              <View className="mx-2">
+                <Image source={require("assets/images/inspirasi-4.png")} />
+              </View>
+            </ScrollView>
           </View>
         </View>
       </View>

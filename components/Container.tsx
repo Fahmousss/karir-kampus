@@ -11,7 +11,6 @@ import { Ionicons } from "@expo/vector-icons";
 import { Input } from "./ui/input";
 import { Text } from "./ui/text";
 import { Button } from "./ui/button";
-import { Calendar } from "./assets/Calendar";
 import { ExpandLeftDouble } from "./assets/ExpandLeftDouble";
 import { router } from "expo-router";
 

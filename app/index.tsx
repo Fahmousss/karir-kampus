@@ -10,7 +10,6 @@ import { File } from "~/components/assets/File";
 import { Calendar } from "~/components/assets/Calendar";
 import { LineUp } from "~/components/assets/LineUp";
 import { ApprovalCard } from "~/components/ApprovalCard";
-import { Separator } from "~/components/ui/separator";
 import { CalendarList } from "~/components/CalendarList";
 import { router } from "expo-router";
 
@@ -148,7 +147,13 @@ export default function Screen() {
                 </Text>
               </View>
               <View className="flex items-center">
-                <Button size={"icon"} className="rounded-xl bg-[#FFC727] p-7">
+                <Button
+                  size={"icon"}
+                  onPress={() => {
+                    router.push("/(pengingat/pengingat");
+                  }}
+                  className="rounded-xl bg-[#FFC727] p-7"
+                >
                   <Calendar />
                 </Button>
                 <Text
