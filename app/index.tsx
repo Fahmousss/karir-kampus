@@ -150,7 +150,7 @@ export default function Screen() {
                 <Button
                   size={"icon"}
                   onPress={() => {
-                    router.push("/(pengingat/pengingat");
+                    router.push("/(pengingat)/pengingat");
                   }}
                   className="rounded-xl bg-[#FFC727] p-7"
                 >
