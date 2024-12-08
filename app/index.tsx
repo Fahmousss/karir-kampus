@@ -3,7 +3,6 @@ import React from "react";
 import { Button } from "~/components/ui/button";
 import { Text } from "~/components/ui/text";
 import { Bell, BellDark } from "~/components/assets/Bell";
-import { BlurView } from "expo-blur";
 import { Input } from "~/components/ui/input";
 import { Ionicons } from "@expo/vector-icons";
 import { File } from "~/components/assets/File";
@@ -21,25 +20,14 @@ export default function Screen() {
           <View className="absolute bg-[#63ABE6] w-[500px] h-[500px] rounded-full -right-[265px] top-10"></View>
           <View className="absolute -right-16 -bottom-10">
             <Image
+              style={{
+                opacity: 0.5,
+              }}
               source={require("assets/images/karir_kampus.png")}
               className="w-[288px] h-[262px]"
             />
           </View>
-          <View className="flex flex-row mb-14 justify-between">
-            <View className="flex flex-col">
-              <Text
-                className="text-sm text-white"
-                style={{ fontFamily: "Outfit_700Bold" }}
-              >
-                Selamat Pagi
-              </Text>
-              <Text
-                className="text-2xl text-[#FFC727]"
-                style={{ fontFamily: "Outfit_800ExtraBold" }}
-              >
-                Bryan Hanggara
-              </Text>
-            </View>
+          <View className="flex flex-row mb-6 justify-end">
             <Button
               size={"icon"}
               className="p-7 bg-white rounded-full flex items-center"
@@ -47,17 +35,28 @@ export default function Screen() {
               <Bell />
             </Button>
           </View>
-          <BlurView
-            intensity={60}
-            tint="extraLight"
+          <View
             style={{
               overflow: "hidden",
               borderRadius: 12,
             }}
             className="p-6 "
-            experimentalBlurMethod="dimezisBlurView"
           >
             <View className="flex flex-col">
+              <View className="flex flex-col">
+                <Text
+                  className="text-sm text-white"
+                  style={{ fontFamily: "Outfit_700Bold" }}
+                >
+                  Selamat Pagi
+                </Text>
+                <Text
+                  className="text-2xl text-[#FFC727]"
+                  style={{ fontFamily: "Outfit_800ExtraBold" }}
+                >
+                  Bryan Hanggara
+                </Text>
+              </View>
               <Text
                 className="text-xl text-white"
                 style={{ fontFamily: "Outfit_600SemiBold" }}
@@ -71,7 +70,7 @@ export default function Screen() {
                 Jurusan Sistem Informasi
               </Text>
             </View>
-          </BlurView>
+          </View>
         </View>
         <View>
           <View className="absolute -top-5 w-[350px] left-10  z-10">
@@ -175,6 +174,17 @@ export default function Screen() {
                 fontFamily: "Outfit_600SemiBold",
               }}
             >
+              Pengingat
+            </Text>
+            <CalendarList />
+          </View>
+          <View className="mb-8">
+            <Text
+              className="mb-4 text-xl text-[#002649]"
+              style={{
+                fontFamily: "Outfit_600SemiBold",
+              }}
+            >
               Pengumuman
             </Text>
             <View className="flex flex-col bg-white items-start border border-[#00000050] rounded-xl px-6 py-3">
@@ -194,18 +204,6 @@ export default function Screen() {
               <ApprovalCard />
               <ApprovalCard />
             </View>
-          </View>
-
-          <View className="mb-8">
-            <Text
-              className="mb-4 text-xl text-[#002649]"
-              style={{
-                fontFamily: "Outfit_600SemiBold",
-              }}
-            >
-              Pengingat
-            </Text>
-            <CalendarList />
           </View>
         </ScrollView>
       </View>
